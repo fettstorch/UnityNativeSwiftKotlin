@@ -10,16 +10,20 @@ The example demonstrates:
 * Basic native code integration
 * Passing data between Unity and native code
 
+It will on Scene start invoke the native code - pass a string argument given through the editor (Bootstrapper) and return some other string from the native code:
+<img width="875" alt="image" src="https://github.com/user-attachments/assets/5c0e6386-704f-42b9-9363-017f85729dc7" />
+
+
 ---
 
 ## 📚 Table of Contents
 
-* [Overview](#overview)
-* [iOS (Swift) Plugin](#ios-swift-plugin)
-  * [iOS Bridge Overview](#ios-bridge-overview)
-  * [iOS File Structure](#ios-file-structure)
-  * [Setup Instructions (iOS)](#setup-instructions-ios)
-* [Android (Kotlin) Plugin](#android-kotlin-plugin)
+* [🔍 Overview](#-overview)
+* [🍎 iOS (Swift) Plugin](#-ios-swift-plugin)
+  * [🔄 iOS Bridge Overview](#-ios-bridge-overview)
+  * [📂 iOS File Structure](#-ios-file-structure)
+  * [🛠 Setup Instructions (iOS)](#-setup-instructions-ios)
+* [🤖 Android (Kotlin) Plugin](#-android-kotlin-plugin)
 
 ---
 
