@@ -24,6 +24,9 @@ It will on Scene start invoke the native code - pass a string argument given thr
   * [📂 iOS File Structure](#-ios-file-structure)
   * [🛠 Setup Instructions (iOS)](#-setup-instructions-ios)
 * [🤖 Android (Kotlin) Plugin](#-android-kotlin-plugin)
+  * [🔄 Android Bridge Overview](#-android-bridge-overview)
+  * [📂 Android File Structure](#-android-file-structure)
+  * [🛠 Setup Instructions (Android)](#-setup-instructions-android)
 
 ---
 
@@ -99,4 +102,48 @@ Assets/
 
 ## 🤖 Android (Kotlin) Plugin
 
-Will follow soon 🙏🏻
+This section shows how to:
+
+* Call Kotlin from Unity C#
+* Pass a string from Unity to Kotlin
+* Store the passed string in Android SharedPreferences
+* Return a string from Kotlin back to Unity
+
+### 🔄 Android Bridge Overview
+
+```text
+Unity C#
+  ↓ (AndroidJavaClass/AndroidJavaObject)
+JNI Bridge (automatic)
+  ↓
+Kotlin companion object (Test.kt) → SharedPreferences
+```
+
+### 📂 Android File Structure
+
+```
+Project Root/
+├── AndroidProjectForGeneratingAar/    # Android Studio project
+│   └── app/src/main/java/com/JulianLearningAbout/NativeCodeFromUnity/
+│       └── Test.kt                    # Kotlin implementation
+└── Assets/
+    └── Plugins/
+        └── Android/
+            └── app-debug.aar    # Generated Android library
+```
+
+### 🛠 Setup Instructions (Android)
+
+1. **Build the Android Library**:
+   * Open terminal in `AndroidProjectForGeneratingAar`
+   * Run `./gradlew assembleRelease`
+   * Copy the resulting aar to the Assets/Plugin/Android directory
+
+2. **Build and Run**:
+   * Build for Android
+   * The example will:
+     * Store the provided string in SharedPreferences
+     * Show a toast message with the received value
+     * Return a confirmation message to Unity
+
+> ℹ️ The Android implementation uses Unity's `AndroidJavaClass` and `AndroidJavaObject` for seamless Java/Kotlin interop. No manual JNI code is required.
