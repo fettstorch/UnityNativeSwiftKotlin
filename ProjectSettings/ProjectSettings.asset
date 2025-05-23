@@ -143,6 +143,8 @@ PlayerSettings:
   bundleVersion: 1.0.2
   preloadedAssets:
   - {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  - {fileID: 2319231228100606539, guid: cf5fe2a9d44b64794909ce329326b3e0, type: 2}
+  - {fileID: 11400000, guid: 781e2f80e35c543dd81ffee627858e0a, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -484,6 +486,9 @@ PlayerSettings:
       m_SubKind: App Store
   m_BuildTargetBatching:
   - m_BuildTarget: iPhone
+    m_StaticBatching: 1
+    m_DynamicBatching: 0
+  - m_BuildTarget: Android
     m_StaticBatching: 1
     m_DynamicBatching: 0
   m_BuildTargetShaderSettings: []
