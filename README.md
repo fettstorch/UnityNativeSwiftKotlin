@@ -134,6 +134,8 @@ Project Root/
 
 ### 🛠 Setup Instructions (Android)
 
+> ℹ️ Note that while Unity will create an xcode project for you in order to build an iOS app, this is **not** the case here! Unity expects a finished .aar and thus you will need to have your own android porject either separately or - like here - inside the unity project (but preferably outside the Assets folder).
+
 1. **Build the Android Library**:
    * Open terminal in `AndroidProjectForGeneratingAar`
    * Run `./gradlew assembleRelease`
